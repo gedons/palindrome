@@ -34,7 +34,10 @@
                         </ul>
 					</div>
                     <div class="col-span-full sm:col-span-3">
-						<button type="button" @click="checkPalindrome" class="px-4 py-2 border rounded-md border-gray-800">Check</button>
+						<button type="button" @click="checkPalindrome" class="px-4 py-2 border rounded-md border-gray-800" :disabled="isCheckingPalindrome">
+              <span v-if="isCheckingPalindrome">Checking...</span>
+              <span v-else>Check</span>
+            </button>
 					</div>
 					 
 				</div>
@@ -49,12 +52,14 @@ export default {
     return {
       word: '',
       result: null,      
-      error: null
+      error: null,
+      isCheckingPalindrome: false,
     };
   },
   methods: {
     async checkPalindrome() {
       this.error = null;
+      this.isCheckingPalindrome = true;
       try {
         const response = await fetch('https://palindrome-api.onrender.com/api/v1/check-word', {
           method: 'POST',
@@ -78,6 +83,9 @@ export default {
         this.result = data;
       } catch (error) {
         this.error = error.message;
+      }
+      finally {
+        this.isCheckingPalindrome = false;
       }
     },
     

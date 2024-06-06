@@ -27,7 +27,10 @@
                     </div>
                    
                     <div class="col-span-full sm:col-span-3">
-                        <button type="button" @click="fetchSymmetricNumbers"  class="px-4 py-2 border rounded-md border-gray-800"> Fetch Symmetric Numbers</button>
+                        <button type="button" @click="fetchSymmetricNumbers"  class="px-4 py-2 border rounded-md border-gray-800" :disabled="isFetchingSymmetricNumbers">
+                            <span v-if="isFetchingSymmetricNumbers">Fetching...</span>
+                            <span v-else>Fetch Symmetric Numbers</span>
+                        </button>
                     </div>
                    
 					 
@@ -43,13 +46,15 @@ export default {
     return {       
       count: 10,
       symmetricNumbers: [],
-      error: null
+      error: null,
+      isFetchingSymmetricNumbers: false
     };
   },
   methods: {
  
     async fetchSymmetricNumbers() {
       this.error = null;
+      this.isFetchingSymmetricNumbers = true;
       try {
         const response = await fetch('https://palindrome-api.onrender.com/api/v1/check-symmetric', {
           method: 'POST',
@@ -73,6 +78,9 @@ export default {
         this.symmetricNumbers = data.symmetricNumbers;
       } catch (error) {
         this.error = error.message;
+      }
+      finally {
+        this.isFetchingSymmetricNumbers = false;
       }
     },
   },
