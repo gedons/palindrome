@@ -27,7 +27,7 @@
                       </div>
                       <h6 class="text-xl mb-1 font-semibold">Palindrome Word Checker</h6>
                       <p class="mb-4 text-blueGray-500">
-                       This feature of our app that allows users to determine if a given word is a palindrome.                       
+                       This feature of our app allows users to determine if a given word is a palindrome.                       
                       </p>
                       <router-link to="/palindrome-word" class="self-start px-5 py-3 text-lg  rounded-2xl bg-blue-600 mt-3 text-gray-50">Get started</router-link>
                     </div>
