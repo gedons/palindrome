@@ -11,7 +11,7 @@
                     Palindrome Word Checker
                   </h4>
                   <p class="text-md font-light mt-2 text-white">
-                    The Palindrome Word Checker is a simple yet powerful feature of our app that allows users to determine if a given word is a palindrome. A palindrome is a word that reads the same backward as forward, such as "civic" or "madam".
+                    This is a simple yet powerful feature  that allows users to determine if a given word is a palindrome. A palindrome is a word that reads the same backward as forward, such as "civic" or "madam".
                   </p>
                 </blockquote>
               </div>
