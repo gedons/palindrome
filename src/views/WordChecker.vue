@@ -56,7 +56,7 @@ export default {
     async checkPalindrome() {
       this.error = null;
       try {
-        const response = await fetch('http://localhost:5000/api/v1/check-word', {
+        const response = await fetch('https://palindrome-api.onrender.com/api/v1/check-word', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
