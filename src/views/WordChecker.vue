@@ -20,7 +20,7 @@
 					</div>
                     <div v-if="result !== null" class="col-span-full">
 						<p class="font-semibold">
-                            The word <strong>"{{ result.word }}"</strong> is <strong>{{ result.isPalindrome ? 'indeed' : 'not' }}</strong> a palindrome.
+                            The word <strong>"{{ word }}"</strong> <strong>"(lowercase: {{ result.word }}"</strong> is <strong>{{ result.isPalindrome ? 'indeed' : 'not' }})</strong> a palindrome.
                         </p>
                         <p>
                             Original: {{ result.word }}<br>
